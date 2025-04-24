@@ -14,7 +14,7 @@ Joomla! 5](https://developingextensionsforjoomla5.com/?utm_source=gh-jdusa25)_.
 
 ## Download the PDF presentation
 
-- [Add the web service](https://carcam.github.io/make-joomla-cli-ing/slides/make-joomla-cli-ing.pdf)
+- [Make Joomla! CLI-ing](https://carcam.github.io/make-joomla-cli-ing/slides/make-joomla-cli-ing.pdf)
 
 ## How to use this repository
 
