@@ -35,5 +35,5 @@ folder.
 The command to generate the presentation with _Marp-cli_ is:
 
 ```bash
-marp --html make-joomla-cli-ing.md --theme-set book.css --pdf-notes --allow-local-files --output
-slides/make-joomla-cli-ing.pdf
+ marp --pdf ./make-joomla-cli-ing.md  --theme-set ./book.css --output ../make-joomla-cli-ing.pdf --allow-local-file
+```
