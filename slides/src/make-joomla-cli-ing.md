@@ -14,7 +14,7 @@ _class: cover
 
 <!--
 _header: "Why I'm here"
-footer: '[Developing Extensions for Joomla! 5](https://developingextensionsforjoomla5.com/jdayusa2024)'
+footer: '[Developing Extensions for Joomla! 5](https://developingextensionsforjoomla5.com/jdayusa2025)'
 -->
 
 <div class="columns">
@@ -41,7 +41,7 @@ footer: '[Developing Extensions for Joomla! 5](https://developingextensionsforjo
 
 <!--
 _header: "The Grand Tour of Today's Adventures"
-footer: '[Developing Extensions for Joomla! 5](https://developingextensionsforjoomla5.com/jdayusa2024)'
+footer: '[Developing Extensions for Joomla! 5](https://developingextensionsforjoomla5.com/jdayusa2025)'
 -->
 
 1. Why CLI?
@@ -288,8 +288,8 @@ _header: "plugins/console/ctl/ctl.xml"
 ```
 
 <div class="url text-white container">
-  <a href="https://developingextensionsforjoomla5.com/jdayusa2025/live/1-plugin-skeleton">https://developingextensionsforjoomla5.com/<br/>
-  jdayusa2025/live/2-plugin-skeleton</a>
+  <a href="https://developingextensionsforjoomla5.com/jdayusa2025/live/basic-plugin">https://developingextensionsforjoomla5.com/<br/>
+  jdayusa2025/live/basic-plugin</a>
 </div>
 
 </div>
@@ -336,8 +336,8 @@ class TaskDeadlineCommand extends AbstractCommand
 ```
 
 <div class="url text-white container">
-  <a href="https://developingextensionsforjoomla5.com/jdayusa2025/live/1-plugin-skeleton">https://developingextensionsforjoomla5.com/<br/>
-  jdayusa2025/live/2-plugin-skeleton</a>
+  <a href="https://developingextensionsforjoomla5.com/jdayusa2025/live/basic-plugin">https://developingextensionsforjoomla5.com/<br/>
+  jdayusa2025/live/basic-plugin</a>
 </div>
 
 </div>
@@ -392,8 +392,8 @@ class TaskConsolePlugin extends CMSPlugin implements SubscriberInterface
 ```
 
 <div class="url text-white container">
-  <a href="https://developingextensionsforjoomla5.com/jdayusa2025/live/1-plugin-skeleton">https://developingextensionsforjoomla5.com/<br/>
-  jdayusa2025/live/2-plugin-skeleton</a>
+  <a href="https://developingextensionsforjoomla5.com/jdayusa2025/live/basic-plugin">https://developingextensionsforjoomla5.com/<br/>
+  jdayusa2025/live/basic-plugin</a>
 </div>
 
 </div>
@@ -445,8 +445,8 @@ return new class implements ServiceProviderInterface
 ```
 
 <div class="url text-white container">
-  <a href="https://developingextensionsforjoomla5.com/jdayusa2025/live/1-plugin-skeleton">https://developingextensionsforjoomla5.com/<br/>
-  jdayusa2025/live/2-plugin-skeleton</a>
+  <a href="https://developingextensionsforjoomla5.com/jdayusa2025/live/basic-plugin">https://developingextensionsforjoomla5.com/<br/>
+  jdayusa2025/live/basic-plugin</a>
 </div>
 
 </div>
