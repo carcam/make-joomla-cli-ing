@@ -18,7 +18,7 @@ Joomla! 5](https://developingextensionsforjoomla5.com/?utm_source=gh-jdusa25)_.
 
 ## How to use this repository
 
-### Component Code
+### Plugin Code
 
 The component code is located in the _main_ branch of this repository and is organized by the following tags, reflecting
 the different stages of my session:
@@ -35,5 +35,7 @@ folder.
 The command to generate the presentation with _Marp-cli_ is:
 
 ```bash
- marp --pdf ./make-joomla-cli-ing.md  --theme-set ./book.css --output ../make-joomla-cli-ing.pdf --allow-local-file
+cd slides/src &&  marp --pdf ./make-joomla-cli-ing.md  --theme-set ./book.css --output ../make-joomla-cli-ing.pdf --allow-local-file
 ```
+
+And the pdf will be inside the `slides` folder of the repository.
