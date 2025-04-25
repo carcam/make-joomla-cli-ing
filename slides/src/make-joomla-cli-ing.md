@@ -224,7 +224,8 @@ _header: "Last year Workshop"
 <div class="columns">
   <div class="column column__content">
 
-1. Clear To-Do list component
+1. Clear To-Do list component ([Download it from
+   GitHub](https://github.com/carcam/Unlock-the-Power-of-Joomla-5/releases/download/5-api/com_ctl.zip))
 1. We are going to create a plugin to check the deadlines for our tasks
 
   </div>
