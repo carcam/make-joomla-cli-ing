@@ -39,3 +39,62 @@ cd slides/src &&  marp --pdf ./make-joomla-cli-ing.md  --theme-set ./book.css --
 ```
 
 And the pdf will be inside the `slides` folder of the repository.
+
+## Setup a development environment
+
+To set up a development environment, follow these instructions:
+
+1. Install the latest version of Joomla! in your preferred development box.
+1. Then, install the main component from this link.
+1. Finally, you can add some tasks in the Joomla! administrator or import the ones in the Mockup data folder of this repo.
+
+### Setup using DDEV
+
+If you are using [DDEV](https://ddev.com/) As your local development solution, you can use this commands to set up your environment:
+
+#### 1. Setup DDEV for Joomla!
+
+```bash
+mkdir jdayusa25 && cd jdayusa25
+```
+
+```bash
+curl -o joomla.zip -L $(curl -sL https://api.github.com/repos/joomla/joomla-cms/releases/latest | docker run -i --rm ddev/ddev-utilities jq -r '.assets | map(select(.name | test("^Joomla.*Stable-Full_Package\\.zip$")))[0].browser_download_url')
+```
+
+```bash
+unzip joomla.zip && rm -f joomla.zip
+```
+
+```bash
+ddev config --project-type=php --webserver-type=apache-fpm --upload-dirs=images
+```
+
+```bash
+ddev start
+```
+
+```bash
+ddev php installation/joomla.php install --site-name="Make Joomla! CLI-ing" --admin-user="Administrator"
+--admin-username=admin --admin-password=AdminAdmin1! --admin-email=admin@example.com --db-type=mysql --db-encryption=0
+--db-host=db --db-user=db --db-pass="db" --db-name=db --db-prefix=ddev_ --public-folder=""
+```
+
+#### 2. Install main component using CLI
+
+```bash
+ddev php cli/joomla.php extension:install --url=https://github.com/carcam/Unlock-the-Power-of-Joomla-5/releases/download/5-api/com_ctl.zip
+```
+
+#### 3. Load mockup data into Database
+
+```bash
+wget https://raw.githubusercontent.com/carcam/make-joomla-cli-ing/refs/heads/main/mockup-data/ddev.sql -O tasks.sql
+```
+
+```bash
+ddev import-db --file=tasks.sql --no-drop
+```
+
+
+
