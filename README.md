@@ -40,6 +40,16 @@ cd slides/src &&  marp --pdf ./make-joomla-cli-ing.md  --theme-set ./book.css --
 
 And the pdf will be inside the `slides` folder of the repository.
 
+### Mockup data
+
+I provide some mockup data you can import in your database. It comes in three different formats:
+
+-`generic.sql`: This file can be easily imported in your database, just replace the generic table prefix in the `insert`
+command with the one of your database.
+- `ddev.sql`: This file can be imported directly in your DDEV site.
+- `import.csv`: This file can be imported with PhpMyAdmin or any similar tool that is able to import CSV file in a
+  databse table.
+
 ## Setup a development environment
 
 To set up a development environment, follow these instructions:
