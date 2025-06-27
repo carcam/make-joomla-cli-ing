@@ -3,7 +3,7 @@
     <authorEmail>carlos@hepta.es</authorEmail>
     <authorUrl>https://developingextensionsforjoomla5.com</authorUrl>
     <creationDate>2025-04-24</creationDate>
-    <description>[![CDATA[This plugin checks the deadline of the tasks added to the ClearTodoList component]]</description>
+    <description><![CDATA[This plugin checks the deadline of the tasks added to the ClearTodoList component]]></description>
     <name>plg_console_ctl</name>
     <namespace path="src">AwCo\Plugin\Console\ClearTodoList</namespace>
     <files>
