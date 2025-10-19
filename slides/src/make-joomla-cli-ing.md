@@ -252,10 +252,10 @@ In your Joomla! installation, create our folder structure:
 Create the folder structure:
 
 1. `plugins/console`
-1. `plugins/console/services`
-1. `plugins/console/src`
-1. `plugins/console/src/Extension`
-1. `plugins/console/src/CliCommand`
+1. `plugins/console/ctl/services`
+1. `plugins/console/ctl/src`
+1. `plugins/console/ctl/src/Extension`
+1. `plugins/console/ctl/src/CliCommand`
 
 </div>
 <div class="column column__reference">
@@ -318,7 +318,7 @@ _header: "src/CliCommands/TaskDeadlineCommand.php"
 
 ```php
 <?php
-namespace AwCo\Plugin\Console\Task\CliCommand;
+namespace AwCo\Plugin\Console\ClearTodoList\CliCommand;
 
 class TaskDeadlineCommand extends AbstractCommand
 {
@@ -367,9 +367,9 @@ _header: "src/Extension/TaskConsolePlugin.php"
 ```php
 <?php
 
-namespace AwCo\Plugin\Console\Task\Extension;
+namespace AwCo\Plugin\Console\ClearTodoList\Extension;
 
-use AwCo\Plugin\Console\Task\CliCommand\TaskDeadlineCommand;
+use AwCo\Plugin\Console\ClearTodoList\CliCommand\TaskDeadlineCommand;
 
 class TaskConsolePlugin extends CMSPlugin implements SubscriberInterface
 {
@@ -424,7 +424,7 @@ _header: "services/provider.php"
 <?php
 
 ...
-use AwCo\Plugin\Console\Task\Extension\TaskConsolePlugin;
+use AwCo\Plugin\Console\ClearTodoList\Extension\TaskConsolePlugin;
 
 return new class implements ServiceProviderInterface
 {
@@ -509,7 +509,7 @@ _header: "Adding functionality to our plugin"
 File: `src/CliCommand/TaskDeadlineCommand.php`
 
 ```php
-    class SpmTaskDeadlineCommand extends AbstractCommand
+    class TaskDeadlineCommand extends AbstractCommand
     {
       ...
 
@@ -561,7 +561,7 @@ File: `src/CliCommand/TaskDeadlineCommand.php`
         $db = Factory::getContainer()->get(DatabaseInterface::class);
         $query = $db->createQuery();
         $query->select('*')
-            ->from('#__spm_tasks');
+            ->from('#__awco_ctl_tasks');
 
         $query->where('deadline BETWEEN NOW() AND DATE_ADD(NOW(), INTERVAL ' . $days . ' DAY)');
         $db->setQuery($query);
@@ -605,7 +605,7 @@ _header: "Adding options to our command"
 File: `src/CliCommand/TaskDeadlineCommand.php`
 
 ```php
-    class SpmTaskDeadlineCommand extends AbstractCommand
+    class TaskDeadlineCommand extends AbstractCommand
     {
       protected function configure(): void
       {
@@ -646,7 +646,7 @@ _header: "Passing the options to our command"
 
 ```php
   ...
-    class SpmTaskDeadlineCommand extends AbstractCommand
+    class TaskDeadlineCommand extends AbstractCommand
     {
       ...
 
@@ -696,7 +696,7 @@ _header: "Passing the options to our command"
 
 ```php
   ...
-    class SpmTaskDeadlineCommand extends AbstractCommand
+    class TaskDeadlineCommand extends AbstractCommand
     {
       ...
 
@@ -710,7 +710,7 @@ _header: "Passing the options to our command"
           $db = $this->getDatabase();
           $query = $db->getQuery(true);
           $query->select('id, project, title AS task')
-              ->from('#__awco_tasks');
+              ->from('#__awco_ctl_tasks');
           $query->where('deadline BETWEEN NOW() AND DATE_ADD(NOW(), INTERVAL ' . $days . ' DAY)');
           $query->setQuery($query);
           $deadlines = $db->loadAssocList('id');
