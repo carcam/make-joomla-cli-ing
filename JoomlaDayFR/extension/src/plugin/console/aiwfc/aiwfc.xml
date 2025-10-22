@@ -1,0 +1,13 @@
+<extension type="plugin" folder="console" method="upgrade">
+    <author><![CDATA[Carlos Cámara]]></author>
+    <authorEmail>carlos@hepta.es</authorEmail>
+    <authorUrl>https://developingextensionsforjoomla5.com</authorUrl>
+    <creationDate>2025-10-18</creationDate>
+    <namespace path="src">Noel\Plugin\Console\Aiwfc</namespace>
+    <description><![CDATA[This plugin checks the wishlist]]></description>
+    <name>plg_console_aiwfc</name>
+    <files>
+        <folder plugin="aiwfc">services</folder>
+        <folder>src</folder>
+    </files>
+</extension>
