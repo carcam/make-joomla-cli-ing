@@ -1,68 +1,67 @@
-# Make Joomla! CLI-ing
+# Rendre Joomla! CLI-ing
 
-This repository contains the code for my workshop on developing a console plugin for Joomla! 5 at [JoomlaDay US
-2025](https://jdayusa.com) titled: **Make Joomla! CLI-ing**.
+Ce dépôt contient le code de mon atelier sur le développement d'un plugin console pour Joomla! 5 au [JoomlaDay US
+2025](https://jdayusa.com) intitulé : **Rendre Joomla! CLI-ing**.
 
-In this session, I demonstrated how to develop a console plugin for Joomla! that gets information from the database and
-show it in the console.
+Lors de cette session, j'ai démontré comment développer un plugin console pour Joomla! qui récupère des informations de la base de données et
+les affiche dans la console.
 
-This session followed the structure of my book on developing extensions for Joomla! 5 titled _[Developing Extensions For
-Joomla! 5](https://developingextensionsforjoomla5.com/?utm_source=gh-jdusa25)_.
+Cette session a suivi la structure de mon livre sur le développement d'extensions pour Joomla! 5 intitulé _[Développer des extensions pour
+Joomla! 5](https://developingextensionsforjoomla5.com/?utm_source=gh-jdusa25)_
 
-[![Cover of the book 'Developing Extensions For Joomla!
+[![Couverture du livre 'Développer des extensions pour Joomla!
 5'](https://developingextensionsforjoomla5.com/images/cover.webp)](https://developingextensionsforjoomla5.com/)
 
-## Download the PDF presentation
+## Télécharger la présentation PDF
 
-- [Make Joomla! CLI-ing](https://carcam.github.io/make-joomla-cli-ing/slides/make-joomla-cli-ing.pdf)
+- [Rendre Joomla! CLI-ing](https://carcam.github.io/make-joomla-cli-ing/slides/make-joomla-cli-ing.pdf)
 
-## How to use this repository
+## Comment utiliser ce dépôt
 
-### Plugin Code
+### Code du plugin
 
-The component code is located in the _main_ branch of this repository and is organized by the following tags, reflecting
-the different stages of my session:
+Le code du composant est situé dans la branche _main_ de ce dépôt et est organisé par les balises suivantes, reflétant
+les différentes étapes de ma session :
 
-- **v1.0.0**: This is the final version of the plugin.
+- **v1.0.0**: C'est la version finale du plugin.
 
-### Presentation Files
+### Fichiers de présentation
 
-The presentation files are located in the _slides_ branch of this repository, specifically in the `slides` folder.
+Les fichiers de présentation sont situés dans la branche _slides_ de ce dépôt, spécifiquement dans le dossier `slides`.
 
-The presentation was created using [Marp](https://marp.app/), and the source files are located in the `slides/src`
-folder.
+La présentation a été créée à l'aide de [Marp](https://marp.app/), et les fichiers source sont situés dans le dossier `slides/src`.
 
-The command to generate the presentation with _Marp-cli_ is:
+La commande pour générer la présentation avec _Marp-cli_ est :
 
 ```bash
 cd slides/src &&  marp --pdf ./make-joomla-cli-ing.md  --theme-set ./book.css --output ../make-joomla-cli-ing.pdf --allow-local-file
 ```
 
-And the pdf will be inside the `slides` folder of the repository.
+Et le PDF sera dans le dossier `slides` du dépôt.
 
-### Mockup data
+### Données de maquette
 
-I provide some mockup data you can import in your database. It comes in three different formats:
+Je fournis des données de maquette que vous pouvez importer dans votre base de données. Elles sont disponibles en trois formats différents :
 
--`generic.sql`: This file can be easily imported in your database, just replace the generic table prefix in the `insert`
-command with the one of your database.
-- `ddev.sql`: This file can be imported directly in your DDEV site.
-- `import.csv`: This file can be imported with PhpMyAdmin or any similar tool that is able to import CSV file in a
-  databse table.
+-`generic.sql`: Ce fichier peut être facilement importé dans votre base de données, il suffit de remplacer le préfixe de table générique dans la commande `insert`
+par celui de votre base de données.
+- `ddev.sql`: Ce fichier peut être importé directement dans votre site DDEV.
+- `import.csv`: Ce fichier peut être importé avec PhpMyAdmin ou tout autre outil similaire capable d'importer un fichier CSV dans une
+table de base de données.
 
-## Setup a development environment
+## Configurer un environnement de développement
 
-To set up a development environment, follow these instructions:
+Pour configurer un environnement de développement, suivez ces instructions :
 
-1. Install the latest version of Joomla! in your preferred development box.
-1. Then, install the main component from this link.
-1. Finally, you can add some tasks in the Joomla! administrator or import the ones in the Mockup data folder of this repo.
+1. Installez la dernière version de Joomla! dans votre environnement de développement préféré.
+1. Ensuite, installez le composant principal à partir de ce lien.
+1. Enfin, vous pouvez ajouter des tâches dans l'administrateur Joomla! ou importer celles du dossier Mockup data de ce dépôt.
 
-### Setup using DDEV
+### Configuration avec DDEV
 
-If you are using [DDEV](https://ddev.com/) As your local development solution, you can use this commands to set up your environment:
+Si vous utilisez [DDEV](https://ddev.com/) comme solution de développement local, vous pouvez utiliser ces commandes pour configurer votre environnement :
 
-#### 1. Setup DDEV for Joomla!
+#### 1. Configuration de DDEV pour Joomla!
 
 ```bash
 mkdir jdayusa25 && cd jdayusa25
@@ -90,13 +89,13 @@ ddev php installation/joomla.php install --site-name="Make Joomla! CLI-ing" --ad
 --db-host=db --db-user=db --db-pass="db" --db-name=db --db-prefix=ddev_ --public-folder=""
 ```
 
-#### 2. Install main component using CLI
+#### 2. Installer le composant principal via CLI
 
 ```bash
 ddev php cli/joomla.php extension:install --url=https://github.com/carcam/Unlock-the-Power-of-Joomla-5/releases/download/5-api/com_ctl.zip
 ```
 
-#### 3. Load mockup data into Database
+#### 3. Charger les données de maquette dans la base de données
 
 ```bash
 wget https://raw.githubusercontent.com/carcam/make-joomla-cli-ing/refs/heads/main/mockup-data/ddev.sql -O tasks.sql
@@ -105,6 +104,3 @@ wget https://raw.githubusercontent.com/carcam/make-joomla-cli-ing/refs/heads/mai
 ```bash
 ddev import-db --file=tasks.sql --no-drop
 ```
-
-
-
